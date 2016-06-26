@@ -1,0 +1,31 @@
+{
+  "name": "serial-async",
+  "version": "1.0.0",
+  "description": "serialization promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbinlin/node-serial-async.git"
+  },
+  "keywords": [
+    "serial",
+    "async",
+    "promise",
+    "lock",
+    "concurrency",
+    "parallel"
+  ],
+  "author": "zbinlin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zbinlin/node-serial-async/issues"
+  },
+  "homepage": "https://github.com/zbinlin/node-serial-async#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
