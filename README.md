@@ -66,3 +66,32 @@ Promise.all([
     console.log("transaction:", asyncStorage.storage); // result: { foo: "biz" }
 });
 ```
+
+
+## NOTE
+
+```javascript
+// You must not use the code like:
+const foo = transaction(function () {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(foo);
+        });
+    });
+});
+transaction(function () {
+    // It will never run here
+    console.log("bar");
+});
+
+// The above is equal:
+const foo = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(foo);
+    });
+});
+foo.then(() => {
+    // It will never run here
+    console.log("bar");
+});
+```
